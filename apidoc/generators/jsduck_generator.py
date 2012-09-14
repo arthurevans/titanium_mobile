@@ -150,24 +150,6 @@ def output_properties_for_obj(annotated_obj):
 		for platform in annotated_obj.platforms:
 			res.append("@platform %s %s" % (platform["name"], format_version(platform["since"])))
 
-	#	if obj.has_key("platforms"):
-	#		for platform in obj["platforms"]:
-	#			res.append("@platform %s" % (platform))
-	#if obj.has_key("since"):
-	#	since = ["since"]
-	# Quick fix ... Fix this later, after TIMOB-9823 is addressed
-	#		if isinstance(since, basestring):
-	#			sinceStr = since
-	#		else:
-	#			sinceStr = ""
-	#			platformNames = { "android": "Android", "iphone": "iPhone", "ipad": "iPad", "mobileweb": "Mobile Web" }
-	#			for platform in ( "android", "iphone", "ipad", "mobileweb" ):
-	#				if since.has_key(platform):
-	#					if len(sinceStr) > 0:
-	#						sinceStr += ", "
-	#					sinceStr += "%s: %s" % ( platformNames[platform], since[platform] )
-	#		res.append("@since %s" % sinceStr)
-
 	if obj.has_key("availability") and obj['availability'] == 'creation':
 		res.append("@creationOnly")
 	if obj.has_key("availability") and obj['availability'] == 'not-creation':
